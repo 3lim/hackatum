@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[azure "site"]
+	name = coolschrank-server
+	slot = production
+	webspace = westeuropewebspace
+[remote "azure"]
+	url = https://coolSchrank@coolschrank-server.scm.azurewebsites.net/coolschrank-server.git
+	fetch = +refs/heads/*:refs/remotes/azure/*
