@@ -7,7 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Hi, I'm CoolSchrank! Nice to meet you!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100"></TextBlock>
+    <Grid Background="#FF001857" RequestedTheme="Dark" >
+        <ListView x:Name="listView">
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" FontSize="75" Text="Some Sensors" Foreground="White" />
+        </ListView>
     </Grid>
 </Page>
