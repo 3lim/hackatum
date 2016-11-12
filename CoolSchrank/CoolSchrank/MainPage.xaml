@@ -8,6 +8,6 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Hallo CoolSchrank-Developer" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+        <TextBlock Text="Hi, I'm CoolSchrank! Nice to meet you!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100"></TextBlock>
     </Grid>
 </Page>
