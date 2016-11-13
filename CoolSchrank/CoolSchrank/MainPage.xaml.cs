@@ -77,7 +77,7 @@ namespace CoolSchrank
 
         private async void image_PointerPressed(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
-            GenerateListItem(await CreateNewSlot(), "");
+            GenerateListItem(await CreateNewSlot(), " ");
             ReOrderItems();
         }
 
@@ -122,6 +122,7 @@ namespace CoolSchrank
             // Secure
             ToggleSwitch secure = new ToggleSwitch();
             secure.Tag = index;
+            secure.Header = " ";
             secure.OffContent = "not secure";
             secure.OnContent = "secure";
             secure.HorizontalAlignment = HorizontalAlignment.Left;
