@@ -1,10 +1,6 @@
-﻿using Microsoft.Azure.Devices.Client;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
-using System.Text;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -13,6 +9,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Input;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Renci.SshNet;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -125,6 +122,7 @@ namespace CoolSchrank
             secure.Header = " ";
             secure.OffContent = "not secure";
             secure.OnContent = "secure";
+            secure.Toggled += Secure_Toggled;
             secure.HorizontalAlignment = HorizontalAlignment.Left;
             tswitch.VerticalAlignment = VerticalAlignment.Center;
 
@@ -151,6 +149,16 @@ namespace CoolSchrank
             container.Children.Add(secure);
             container.Children.Add(dest);
             list.Children.Add(container);
+        }
+
+        private void Secure_Toggled(object sender, RoutedEventArgs e)
+        {
+            using(var client = new SshClient("52.169.239.147", "hacka", "Hackatum2016"))
+            {
+                client.Connect();
+                client.RunCommand("python files/send_sms.py \"bier wurde entnomen! Achtung!\"");
+                client.Disconnect();
+            }
         }
 
         private void dest_PointerPressed(object sender, PointerRoutedEventArgs e)
