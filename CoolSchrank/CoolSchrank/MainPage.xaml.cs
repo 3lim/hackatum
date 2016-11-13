@@ -164,39 +164,40 @@ namespace CoolSchrank
         
         private async void ReLabel()
         {
-            Dictionary<int, string> labels = await GetLabels();
+            /*Dictionary<int, string> labels = await GetLabels();
 
             foreach (Panel item in list.Children)
             {
                 ToggleSwitch tswitch = (ToggleSwitch)item.Children[1];
                 tswitch.Header = labels[(int)tswitch.Tag];
-            }
+            }*/
         }
 
         // API  
             
         private async Task<int> CreateNewSlot()
         {
-            HttpResponseMessage response = await hc.PostAsync(apiUri + "", new HttpMessageContent(new HttpRequestMessage())); // TODO: neue Slot id 
+            /*HttpResponseMessage response = await hc.PostAsync(apiUri + "", new HttpMessageContent(new HttpRequestMessage())); // TODO: neue Slot id 
             var json = JsonConvert.DeserializeObject<Dictionary<string, string>>(await response.Content.ReadAsStringAsync());
-            return Int32.Parse(json["id"]); 
+            return Int32.Parse(json["id"]); */
+            return 3;
         }
 
         private async void DestroySlot(int index)
         {
-            await hc.DeleteAsync(apiUri + ""); // TODO: Slot Freigeben
+            /*await hc.DeleteAsync(apiUri + ""); // TODO: Slot Freigeben*/
         }
 
         private async void SendData(int index, double value)
         {
 
-            var dataSet = new
+            /*var dataSet = new
             {
                 id = index,
                 value = value,
             };
 
-            await hc.PostAsJsonAsync(apiUri + "", dataSet); //TODO: Entrypoint
+            await hc.PostAsJsonAsync(apiUri + "", dataSet); //TODO: Entrypoint*/
         }
 
         private async Task<Dictionary<int, string>> GetLabels()
