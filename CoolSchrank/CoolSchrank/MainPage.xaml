@@ -8,8 +8,14 @@
     mc:Ignorable="d">
 
     <Grid Background="#FF001857" RequestedTheme="Dark" >
-        <ListView x:Name="listView">
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" FontSize="75" Text="Some Sensors" Foreground="White" />
-        </ListView>
+        <RelativePanel>
+            <TextBlock x:Name="textBlock" FontSize="75" Text="CoolSchrank" Margin="25,0,0,0" />
+            <Image x:Name="image" Height="100" VerticalAlignment="Top" Width="73" Margin="0,10,20,0" Source="Assets/Plus.png" RenderTransformOrigin="1.466,-0.243" PointerPressed="image_PointerPressed" RelativePanel.AlignRightWithPanel="True"/>
+        </RelativePanel>
+        <ScrollViewer Margin="0,120,0,0">
+            <StackPanel x:Name="list">
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
