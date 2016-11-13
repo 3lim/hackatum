@@ -108,12 +108,28 @@ namespace CoolSchrank
             ToggleSwitch tswitch = new ToggleSwitch();
             tswitch.Header = label;
             tswitch.Tag = index;
+            tswitch.OffContent = "not available";
+            tswitch.OnContent = "available";
+            tswitch.IsOn = true;
             tswitch.Toggled += tswitch_Toggled;
             tswitch.HorizontalAlignment = HorizontalAlignment.Left;
+            tswitch.VerticalAlignment = VerticalAlignment.Center;
 
             Thickness switch_margin = tswitch.Margin;
             switch_margin.Left = 150;
             tswitch.Margin = switch_margin;
+
+            // Secure
+            ToggleSwitch secure = new ToggleSwitch();
+            secure.Tag = index;
+            secure.OffContent = "not secure";
+            secure.OnContent = "secure";
+            secure.HorizontalAlignment = HorizontalAlignment.Left;
+            tswitch.VerticalAlignment = VerticalAlignment.Center;
+
+            Thickness secure_margin = secure.Margin;
+            secure_margin.Left = 350;
+            secure.Margin = secure_margin;
 
             // Destroy
             Image dest = new Image();
@@ -131,6 +147,7 @@ namespace CoolSchrank
             // Adding
             container.Children.Add(slot);
             container.Children.Add(tswitch);
+            container.Children.Add(secure);
             container.Children.Add(dest);
             list.Children.Add(container);
         }
